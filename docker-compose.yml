@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:17 # versi postgres yang digunakan
+    ports:
+      - "${DB_PORT}:5432" # mapping port di local dan di container
+    environment:
+      POSTGRES_USER: ${DB_USERNAME} # username database
+      POSTGRES_PASSWORD: ${DB_PASSWORD} # password database
+      POSTGRES_DB: ${DB_DATABASE} # nama database
+    volumes:
+      - db_data:/var/lib/postgresql/data # volume untuk menyimpan data
+    networks:
+      - laravel-network # network yang digunakan untuk komunikasi antar container
+
+volumes:
+  db_data:
+
+networks:
+  laravel-network:
+    driver: bridge
