@@ -8,7 +8,7 @@ use Inertia\Inertia;
 Route::redirect('/', '/dashboard');
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/loket/pengajuan', function () {
