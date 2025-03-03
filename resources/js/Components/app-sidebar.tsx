@@ -20,7 +20,7 @@ const data = {
     navMain: [
         {
             title: 'Dashboard',
-            url: '#',
+            url: route('dashboard'),
             isActive: true,
         },
         {
@@ -29,7 +29,7 @@ const data = {
             items: [
                 {
                     title: 'Pengajuan',
-                    url: '#',
+                    url: route('pengajuan'),
                     isActive: false,
                 },
                 {
