@@ -11,7 +11,7 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/pengajuan', function () {
+Route::get('/loket/pengajuan', function () {
     return Inertia::render('Pengajuan');
 })->middleware(['auth', 'verified'])->name('pengajuan');
 
