@@ -40,6 +40,7 @@ const data = {
         },
     ],
 };
+import ApplicationLogo from './ApplicationLogo';
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     return (
@@ -50,7 +51,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         <SidebarMenuButton size="lg" asChild>
                             <a href="#">
                                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                                    <GalleryVerticalEnd className="size-4" />
+                                    {/* <GalleryVerticalEnd className="size-4" /> */}
+                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
                                 </div>
                                 <div className="flex flex-col gap-0.5 leading-none">
                                     <span className="font-semibold">

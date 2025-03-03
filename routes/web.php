@@ -12,7 +12,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/loket/pengajuan', function () {
-    return Inertia::render('Pengajuan');
+    return Inertia::render('Pengajuan/Pengajuan');
 })->middleware(['auth', 'verified'])->name('pengajuan');
 
 Route::middleware('auth')->group(function () {
