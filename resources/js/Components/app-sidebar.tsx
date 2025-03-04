@@ -38,7 +38,7 @@ const data = {
                 },
                 {
                     title: 'Pertanggungjawaban',
-                    url: '#',
+                    url: route('downloadpertanggungjawabanperjalanandinas'),
                 },
             ],
         },

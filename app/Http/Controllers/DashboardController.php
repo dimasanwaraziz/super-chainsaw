@@ -18,18 +18,22 @@ class DashboardController extends Controller
         return Inertia::render('Dashboard/Pengajuan/Pengajuan');
     }
 
-    public function download123()
-    {
-        return Inertia::render('Dashboard/Download/Download');
-    }
-
-    public function download()
+    public function downloadRincianPerjalananDinas()
     {
         $users = User::all();
         $pdf = app('dompdf.wrapper');
         $pdf->getDomPDF()->set_option("enable_php", true);
         $pdf->loadView('rincianbiayaperjadin', compact('users'));
         return $pdf->stream('users.pdf');
+    }
 
+    public function downloadPertanggungjawaban()
+    {
+        $users = User::all();
+        $pdf = app('dompdf.wrapper');
+        $pdf->getDomPDF()->set_option("enable_php", true);
+        $pdf->loadView('pertanggungjawaban', compact('users'));
+        $pdf->setPaper('a4', 'landscape');
+        return $pdf->stream('users.pdf');
     }
 }
