@@ -33,6 +33,10 @@ const data = {
                     isActive: false,
                 },
                 {
+                    title: 'Download',
+                    url: route('download'),
+                },
+                {
                     title: 'Pertanggungjawaban',
                     url: '#',
                 },
