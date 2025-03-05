@@ -40,6 +40,10 @@ const data = {
                     title: 'Pertanggungjawaban',
                     url: route('downloadpertanggungjawabanperjalanandinas'),
                 },
+                {
+                    title: 'Tanda Terima Uang',
+                    url: route('downloadtandaterimaperjalanandinas'),
+                },
             ],
         },
     ],
