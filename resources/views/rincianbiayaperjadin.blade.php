@@ -10,7 +10,7 @@
             top: 35%;
             width: 100%;
             text-align: center;
-            opacity: .2;
+            opacity: .1;
             /* transform: rotate(10deg); */
             transform-origin: 50% 50%;
             z-index: -1000;

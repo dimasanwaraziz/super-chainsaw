@@ -46,4 +46,14 @@ class DashboardController extends Controller
         $pdf->setPaper([0, 0, 612, 936], 'portrait'); // Set paper size to continuous form
         return $pdf->stream('users.pdf');
     }
+
+    public function downloadDaftarNominal()
+    {
+        $users = User::all();
+        $pdf = app('dompdf.wrapper');
+        $pdf->getDomPDF()->set_option("enable_php", true);
+        $pdf->loadView('daftarnominal', compact('users'));
+        $pdf->setPaper('a4', 'landscape');
+        return $pdf->stream('users.pdf');
+    }
 }

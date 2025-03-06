@@ -5,7 +5,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            font-size: 8px;
+            font-size: 7px;
         }
 
         #watermark {
@@ -13,7 +13,7 @@
             top: 13%;
             width: 100%;
             text-align: center;
-            opacity: .2;
+            opacity: .1;
             /* transform: rotate(10deg); */
             transform-origin: 50% 50%;
             z-index: -1000;
@@ -63,7 +63,7 @@
                     <p style="text-align: center; font-weight: bold; text-decoration: underline;">SURAT PERJALANAN DINAS
                         (SPD)</p>
                 </td>
-                <td style="width: 1%;"></td>
+                <td style="width: 1%;" rowspan="12"></td>
                 <td style="width: 25%; text-align: left; vertical-align: top;">I</td>
                 <td style="width: 25%;">
                     <table style="width: 100%; border: none;">
@@ -94,27 +94,63 @@
                 <td style="width: 2%">1</td>
                 <td colspan="2">Pejabat Pembuat komitmen</td>
                 <td>BIDANG PERSIDANGAN I</td>
-                <td></td>
-                <td rowspan="3" style="vertical-align: top;">
-                    <div style="float: left; width: 10%;">II</div>
-                    <div style="float: left; width: 90%;">
-                        <table>
-                            <tr>
-                                <td style="width: 50%; border: none;">
-                                    <div style="text-align: left;">Tiba di</div>
-                                    <div style="text-align: left;">pada tanggal</div>
-                                    <div style="text-align: left;">Kepala</div>
-                                </td>
-                                <td style="width: 50%; border: none;">
-                                    <div style="text-align: left;">: Tangerang</div>
-                                    <div style="text-align: left;">: 22 Januari 2025</div>
-                                    <div style="text-align: left;">: </div>
-                                </td>
-                            </tr>
-                        </table>
+                {{-- <td rowspan="3">
+                    <div style="vertical-align: top">
+                        <div style="float: left; width: 10%;">II</div>
+                        <div style="float: left; width: 90%;">
+                            <table>
+                                <tr>
+                                    <td style="width: 50%; border: none;">
+                                        <div style="text-align: left;">Tiba di</div>
+                                        <div style="text-align: left;">pada tanggal</div>
+                                        <div style="text-align: left;">Kepala</div>
+                                    </td>
+                                    <td style="width: 50%; border: none;">
+                                        <div style="text-align: left;">: Tangerang</div>
+                                        <div style="text-align: left;">: 22 Januari 2025</div>
+                                        <div style="text-align: left;">: </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
+                    <div style="width: 100%; text-align: center; margin-top: auto; vertical-align: bottom;">
+                        <p style="margin: 0;">(__________________________)</p>
+                    </div>
+                </td> --}}
+                <td rowspan="5">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                            <td style="vertical-align: top;">
+                                <div style="display: flex;">
+                                    <div style="width: 10%;">II</div>
+                                    <div style="width: 90%;">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%; border: none;">
+                                                    <div style="text-align: left;">Tiba di</div>
+                                                    <div style="text-align: left;">pada tanggal</div>
+                                                    <div style="text-align: left;">Kepala</div>
+                                                </td>
+                                                <td style="width: 50%; border: none;">
+                                                    <div style="text-align: left;">: Tangerang</div>
+                                                    <div style="text-align: left;">: 22 Januari 2025</div>
+                                                    <div style="text-align: left;">: </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: bottom; text-align: center;">
+                                <p style="margin: 0;">(__________________________)</p>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
-                <td rowspan="3" style="vertical-align: top;">
+                <td rowspan="5" style="vertical-align: top;">
                     <table style="width: 100%; border: none;">
                         <tr>
                             <td style="width: 20%; border: none;">Berangkat dari</td>
@@ -135,21 +171,27 @@
                 <td>2</td>
                 <td colspan="2">Nama/NIP yang melaksanakan perjalanan dinas</td>
                 <td>SITI HEDIATI SOEHARTO, S.E.</td>
-                <td></td>
             </tr>
             <tr>
-                <td>3</td>
-                <td colspan="2">a. Pangkat dan Golongan Ruang Gaji menurut PP No. 6 Tahun 1997<br>b. Jabatan /
-                    Instansi<br>c. Tingkat Biaya Perjalanan Dinas</td>
-                <td>...<br>Anggota DPR RI NO A-117<br>A</td>
-                <td></td>
+                <td rowspan="3">3</td>
+                <td colspan="2">a. Pangkat dan Golongan Ruang Gaji menurut PP No. 6 Tahun 1997
+                </td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td colspan="2">b. Jabatan / Instansi
+                </td>
+                <td>Anggota DPR RI NO A-117</td>
+            </tr>
+            <tr>
+                <td colspan="2">c. Tingkat Biaya Perjalanan Dinas</td>
+                <td>A</td>
             </tr>
             <tr>
                 <td>4</td>
                 <td colspan="2">Maksud perjalanan dinas</td>
                 <td>Kunjungan Kerja Spesifik Komisi IV DPR RI Ke Banten dalam rangka meninjau pemagaran laut di 6
                     kecamatan di Kabupaten Tangerang</td>
-                <td></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -159,20 +201,36 @@
                 <td>Transportasi Umum</td>
                 <td></td>
                 <td></td>
+            </tr>
+            <tr>
+                <td rowspan="2">6</td>
+                <td colspan="2">a. Tempat berangkat</td>
+                <td>Jakarta</td>
+                <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td>6</td>
-                <td colspan="2">a. Tempat berangkat<br>b. Tempat tujuan</td>
-                <td>Jakarta<br>Tangerang</td>
-                <td></td>
+                <td colspan="2">b. Tempat tujuan</td>
+                <td>Tangerang</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td>7</td>
-                <td colspan="2">a. Lamanya perjalanan dinas<br>b. Tanggal berangkat<br>c. Tanggal harus kembali</td>
-                <td>1 (satu) hari<br>22 Januari 2025<br>22 Januari 2025</td>
+                <td rowspan="3">7</td>
+                <td colspan="2">a. Lamanya perjalanan dinas</td>
+                <td>1 (satu) hari</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">b. Tanggal berangkat</td>
+                <td>22 Januari 2025</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">c. Tanggal harus kembali</td>
+                <td>22 Januari 2025</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -180,16 +238,30 @@
             <tr>
                 <td>8</td>
                 <td>Pengikut Nama<br>1<br>2<br>3</td>
-                <td>Umur</td>
+                <td style="vertical-align: top;">Umur</td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td>9</td>
-                <td colspan="2">Pembebanan anggaran:<br>a. Instansi<br>b. Mata anggaran</td>
-                <td>LEMBAGA DPR RI<br>001030.CF.5803.ABC.005.054.A.524111</td>
+                <td rowspan="3">9</td>
+                <td colspan="2">Pembebanan anggaran:</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">a. Instansi</td>
+                <td>LEMBAGA DPR RI</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">b. Mata anggaran</td>
+                <td>001030.CF.5803.ABC.005.054.A.524111</td>
                 <td></td>
                 <td></td>
                 <td></td>

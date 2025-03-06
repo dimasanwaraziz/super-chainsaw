@@ -44,6 +44,10 @@ const data = {
                     title: 'Tanda Terima Uang',
                     url: route('downloadtandaterimaperjalanandinas'),
                 },
+                {
+                    title: 'Daftar Nominal',
+                    url: route('downloaddaftarnominal'),
+                },
             ],
         },
     ],
