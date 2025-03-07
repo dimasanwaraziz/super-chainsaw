@@ -30,8 +30,8 @@
     </div>
     <table style="width:100%; text-align: left;">
         <tr>
-            <td style="width: 10%;">UNTUK PEMBAYARAN</td>
-            <td style="width: 1%;">:</td>
+            <td style="width: 10%; vertical-align: top;">UNTUK PEMBAYARAN</td>
+            <td style="width: 1%; vertical-align: top;">:</td>
             <td style="width: 89%;">BELANJA BARANG KUNJUNGAN KERJA SPESIFIK KOMISI IV DPR RI KE BANTEN DALAM RANGKA
                 MENINJAU PEMAGARAN LAUT
                 DI 6 KECAMATAN DI KABUPATEN TANGERANG TANGGAL 22 JANUARI 2025 S.D 22 JANUARI 2025 SESUAI SURAT TUGAS NO:
