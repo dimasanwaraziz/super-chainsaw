@@ -20,14 +20,14 @@
         }
 
         table {
-            margin: 0;
-            padding: 0;
+            margin: 0.1;
+            padding: 0.1;
             border-collapse: collapse;
         }
 
         td {
-            margin: 0;
-            padding: 0;
+            margin: 0.1;
+            padding: 0.1;
         }
     </style>
     <meta charset="UTF-8">
@@ -125,7 +125,7 @@
                 </td>
             </tr>
             <tr>
-                <td style="width: 3px;">1</td>
+                <td style="width: 3px; text-align: center;">1</td>
                 <td colspan="2">Pejabat Pembuat Komitmen</td>
                 <td>BIDANG PERSIDANGAN I</td>
                 <td rowspan="5" style="vertical-align: top;">
@@ -190,12 +190,12 @@
                 </td>
             </tr>
             <tr>
-                <td style="width: 3px;">2</td>
+                <td style="width: 3px; text-align: center;">2</td>
                 <td colspan="2">Nama/NIP yang melaksanakan perjalanan dinas</td>
                 <td>SITI HEDIATI SOEHARTO</td>
             </tr>
             <tr>
-                <td style="width: 3px;" rowspan="3">3</td>
+                <td style="width: 3px; text-align: center;" rowspan="3">3</td>
                 <td colspan="2">a. Pangkat dan Golongan Ruang gaji menurut PP No.6 Tahun 1997</td>
                 <td></td>
             </tr>
@@ -208,7 +208,7 @@
                 <td>A</td>
             </tr>
             <tr>
-                <td style="width: 3px;">4</td>
+                <td style="width: 3px; text-align: center;">4</td>
                 <td colspan="2">Maksud perjalanan dinas</td>
                 <td style="max-height: 50px; overflow: hidden;">Kunjungan Kerja Spesifik komisi IV DPR RI Ke Banten
                     dalam rangka meninjau pemagaran laut di 6 kecamatan di Kabupaten Tangerang</td>
@@ -274,12 +274,12 @@
                 </td>
             </tr>
             <tr>
-                <td style="width: 3px;">5</td>
+                <td style="width: 3px; text-align: center;">5</td>
                 <td colspan="2">Alat Angkutan yang dipergunakan</td>
                 <td>Transportasi Umum</td>
             </tr>
             <tr>
-                <td style="width: 3px;" rowspan="2">6</td>
+                <td style="width: 3px; text-align: center;" rowspan="2">6</td>
                 <td colspan="2">a. Tempat berangkat</td>
                 <td>Jakarta</td>
             </tr>
@@ -288,7 +288,7 @@
                 <td>Tangerang</td>
             </tr>
             <tr>
-                <td style="width: 3px;" rowspan="3">7</td>
+                <td style="width: 3px; text-align: center;" rowspan="3">7</td>
                 <td colspan="2">a. Lamanya perjalanan dinas</td>
                 <td>1 (satu) hari</td>
                 <td rowspan="4" style="vertical-align: top;">
@@ -361,13 +361,13 @@
                 <td>22 Januari 2025</td>
             </tr>
             <tr>
-                <td style="width: 3px;">8</td>
+                <td style="width: 3px; text-align: center;">8</td>
                 <td style="vertical-align: top;">Nama Pengikut <br>1 <br>2 <br>3</td>
                 <td style="vertical-align: top;">Umur</td>
                 <td style="vertical-align: top;">Hubungan Keluarga/keterangan</td>
             </tr>
             <tr>
-                <td style="width: 3px;" rowspan="3">9</td>
+                <td style="width: 3px; text-align: center;" rowspan="3">9</td>
                 <td colspan="2">Pembebanan anggaran:</td>
                 <td></td>
                 <td rowspan="5" colspan="2" style="vertical-align: top;">
@@ -409,7 +409,7 @@
                 <td>001030.cf.5803.abc.005.054.a.524111</td>
             </tr>
             <tr>
-                <td style="width: 3px;">10</td>
+                <td style="width: 3px; text-align: center;">10</td>
                 <td colspan="2">Keterangan lain-lain</td>
                 <td>ST No: ST.03/KOM IV/DPR RI/I/2025 Tanggal 20 Januari 2025</td>
             </tr>

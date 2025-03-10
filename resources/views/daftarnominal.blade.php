@@ -84,14 +84,13 @@
                     <td>Tujuan {{ $i }}</td>
                     <td>Tanggal {{ $i }}</td>
                     <td>{{ $i }} Hari</td>
-                    <td>Rp {{ number_format(100000 * $i, 0, ',', '.') }}</td>
-                    <td>Rp {{ number_format(200000 * $i, 0, ',', '.') }}</td>
-                    <td>Rp {{ number_format(30000 * $i, 0, ',', '.') }}</td>
-                    <td>Rp {{ number_format(40000 * $i, 0, ',', '.') }}</td>
-                    <td>Rp {{ number_format(50000 * $i, 0, ',', '.') }}</td>
-                    <td>Rp {{ number_format(60000 * $i, 0, ',', '.') }}</td>
-                    <td>Rp
-                        {{ number_format(100000 * $i + 200000 * $i + 30000 * $i + 40000 * $i + 50000 * $i + 60000 * $i, 0, ',', '.') }}
+                    <td>Rp{{ number_format(100000 * $i, 0, ',', '.') }}</td>
+                    <td>Rp{{ number_format(200000 * $i, 0, ',', '.') }}</td>
+                    <td>Rp{{ number_format(30000 * $i, 0, ',', '.') }}</td>
+                    <td>Rp{{ number_format(40000 * $i, 0, ',', '.') }}</td>
+                    <td>Rp{{ number_format(50000 * $i, 0, ',', '.') }}</td>
+                    <td>Rp{{ number_format(60000 * $i, 0, ',', '.') }}</td>
+                    <td>Rp{{ number_format(100000 * $i + 200000 * $i + 30000 * $i + 40000 * $i + 50000 * $i + 60000 * $i, 0, ',', '.') }}
                     </td>
                 </tr>
             @endfor

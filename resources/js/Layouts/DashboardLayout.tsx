@@ -13,12 +13,14 @@ import {
     SidebarProvider,
     SidebarTrigger,
 } from '@/components/ui/sidebar';
+import { usePage } from '@inertiajs/react';
 import { PropsWithChildren, ReactNode } from 'react';
 
 export default function PageDashboard({
     header,
     children,
 }: PropsWithChildren<{ header?: ReactNode }>) {
+    const { url } = usePage();
 
     return (
         <SidebarProvider>
