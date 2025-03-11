@@ -118,9 +118,7 @@ export default function Dashboard() {
                                             {...field}
                                         />
                                     </FormControl>
-                                    <FormDescription>
-                                        This is your public display name.
-                                    </FormDescription>
+                                    <FormDescription>Alasan perjalanan dinas</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -502,9 +500,7 @@ export default function Dashboard() {
                                                 }}
                                             />
                                         </FormControl>
-                                        <FormDescription>
-                                            This is your public display name.
-                                        </FormDescription>
+                                        <FormDescription>Nama Anggota yang berangkat</FormDescription>
                                     </div>
                                     <button
                                         type="button"

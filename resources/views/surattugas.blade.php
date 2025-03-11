@@ -3,9 +3,9 @@
 
 <head>
     <style>
-        /* body {
+        body {
             font-family: Arial, sans-serif;
-        } */
+        }
 
         #watermark {
             position: fixed;
@@ -35,10 +35,12 @@
         <table style="width: 100%;">
             <tr>
                 <td style="width: 15%;">
-                    <img src="{{ public_path('images/watermark-setjen-dpr-ri.png') }}" alt="Logo DPR RI" style="width: 80px;">
+                    <img src="{{ public_path('images/watermark-setjen-dpr-ri.png') }}" alt="Logo DPR RI"
+                        style="width: 80px;">
                 </td>
                 <td style="width: 85%; text-align: center;">
-                    <div style="font-family: Arial, sans-serif; font-weight: bold; font-size: 18px;">SEKRETARIAT JENDERAL <br> DEWAN
+                    <div style="font-family: Arial, sans-serif; font-weight: bold; font-size: 18px;">SEKRETARIAT
+                        JENDERAL <br> DEWAN
                         PERWAKILAN RAKYAT REPUBLIK INDONESIA</div>
                     <div style="font-family: Arial, sans-serif; font-size: 12px;">JLN. JENDERAL GATOT SUBROTO JAKARTA
                         KODE POS 10270 <br> TELP (021) 5715 349 FAX (021) 5715 423 / 5715 925, WEBSITE: www.dpr.go.id
@@ -58,17 +60,17 @@
     <br>
     <table style="width: 100%;">
         <tr>
-            <td style="width: 30%; vertical-align: top; font-weight: bold;">Menimbang</td>
-            <td style="width: 5%; text-align: center; vertical-align: top;">:</td>
-            <td style="width: 65%; vertical-align: top;">Bahwa dengan meningkatnya peran dan fungsi DPR RI, maka untuk
-                mendukung kegiatan DPR RI tersebut khususnya dalam melaksanakan perjalana dinas diperlukan prose teknis
-                dan administrasi yang cepat dan tepat;</td>
+            <td style="width: 20%; vertical-align: top; font-weight: bold;">Menimbang</td>
+            <td style="width: 1%; text-align: center; vertical-align: top;">:</td>
+            <td style="width: 80%; vertical-align: top; text-align: justify;">Bahwa dengan meningkatnya peran dan fungsi
+                DPR RI, maka untuk mendukung kegiatan DPR RI tersebut khususnya dalam melaksanakan perjalanan dinas
+                diperlukan proses teknis dan administrasi yang cepat dan tepat;</td>
         </tr>
         <tr>
-            <td style="width: 30%; vertical-align: top; font-weight: bold;">Dasar</td>
-            <td style="width: 5%; text-align: center; vertical-align: top;">:</td>
-            <td style="width: 65%; vertical-align: top;">
-                <ol style="padding-left: 15; margin: 0;">
+            <td style="width: 20%; vertical-align: top; font-weight: bold;">Dasar</td>
+            <td style="width: 1%; text-align: center; vertical-align: top;">:</td>
+            <td style="width: 80%; vertical-align: top;">
+                <ol style="padding-left: 20px; margin: 0; text-align: justify;">
                     <li>Peraturan Menteri Keuangan Nomor 119/PMK.05/2023 tentang Perubahan atas Peraturan Menteri
                         Keuangan Nomor 113/PMK.05/2012 tentang Perjalanan Dinas Bagi Pejabat Negara, Pegawai Negeri dan
                         Pegawai Tidak Tetap;</li>
@@ -84,21 +86,22 @@
     <br>
     Atas persetujuan Pimpinan Sekretariat Jenderal DPR RI, maka dengan ini
 
-    <div style="text-align: center;">
+    <div style="text-align: center; font-size: 20px;">
         <br>
         Memberi tugas
     </div>
 
     <table style="width: 100%;">
         <tr>
-            <td style="width: 30%; vertical-align: top; font-weight: bold;">Kepada</td>
-            <td style="width: 5%; text-align: center; vertical-align: top;">:</td>
-            <td style="width: 65%; vertical-align: top;">Nama terlampir</td>
+            <td style="width: 20%; vertical-align: top; font-weight: bold;">Kepada</td>
+            <td style="width: 1%; text-align: center; vertical-align: top;">:</td>
+            <td style="width: 80%; vertical-align: top;">Nama terlampir</td>
         </tr>
         <tr>
-            <td style="width: 30%; vertical-align: top; font-weight: bold;">Untuk</td>
-            <td style="width: 5%; text-align: center; vertical-align: top;">:</td>
-            <td style="width: 65%; vertical-align: top;">Melakukan perjalanan dinas ke ...(2) dalam rangka ...(3) selama
+            <td style="width: 20%; vertical-align: top; font-weight: bold;">Untuk</td>
+            <td style="width: 1%; text-align: center; vertical-align: top;">:</td>
+            <td style="width: 80%; vertical-align: top; text-align: justify;">Melakukan perjalanan dinas ke ...(2) dalam
+                rangka ...(3) selama
                 ...(4) hari terhitung mulai tanggal ...(5) sampai dengan tanggal ...(6). Seluruh biaya yang berkaitan
                 dengan penugasan tersebut dibebankan pada Mata Anggaran ...(7)</td>
         </tr>
@@ -132,7 +135,7 @@
     </ol>
 
     <div class="page_break">
-        <table style="width: 100%;">
+        <table style="width: 100%; font-size: 14px;">
             <tr>
                 <td style="width: 50%;"></td>
                 <td style="width: 50%;">
@@ -170,11 +173,11 @@
             <tbody>
                 @for ($i = 1; $i <= 7; $i++)
                     <tr>
-                        <td style="text-align: center;">{{ $i }}</td>
-                        <td>Nama {{ $i }}</td>
-                        <td style="text-align: center;">123456{{ $i }}</td>
-                        <td>Jabatan {{ $i }}</td>
-                        <td>Fraksi {{ $i }}</td>
+                        <td style="text-align: center; width: 5%;">{{ $i }}</td>
+                        <td style="width: 25%;">Nama {{ $i }}</td>
+                        <td style="text-align: center; width: 20%;">123456{{ $i }}</td>
+                        <td style="width: 25%;">Jabatan {{ $i }}</td>
+                        <td style="width: 25%;">Fraksi {{ $i }}</td>
                     </tr>
                 @endfor
             </tbody>
