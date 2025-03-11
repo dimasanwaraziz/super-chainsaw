@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { Calendar } from '@/components/ui/calendar';
 import {
     Form,
     FormControl,
@@ -12,6 +13,11 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from '@/components/ui/popover';
+import {
     Select,
     SelectContent,
     SelectItem,
@@ -19,8 +25,11 @@ import {
     SelectValue,
 } from '@/components/ui/select';
 import DashboardLayout from '@/Layouts/DashboardLayout';
+import { cn } from '@/lib/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Head } from '@inertiajs/react';
+import { format } from 'date-fns';
+import { Calendar as CalendarIcon } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -31,6 +40,10 @@ const formSchema = z.object({
     anggota: z.string().min(2).max(50),
     tujuan: z.string().min(2).max(50),
     keberangkatan: z.string().min(2).max(50),
+    dob: z.object({
+        from: z.date(),
+        to: z.date(),
+    }),
 });
 
 export default function Dashboard() {
@@ -40,7 +53,7 @@ export default function Dashboard() {
         defaultValues: {
             nama: '',
             nip: '',
-            anggota: '',
+            dob: { from: undefined, to: undefined },
         },
     });
 
@@ -95,34 +108,17 @@ export default function Dashboard() {
                             name="nama"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Nama Pengaju</FormLabel>
+                                    <FormLabel>
+                                        Tujuan Perjalanan Dinas
+                                    </FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="John Doe"
+                                            placeholder="Benchmarking"
                                             {...field}
                                         />
                                     </FormControl>
                                     <FormDescription>
                                         This is your public display name.
-                                    </FormDescription>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="nip"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>NIP</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="198001012003121001"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormDescription>
-                                        Nomor Induk Pegawai
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>
@@ -380,7 +376,63 @@ export default function Dashboard() {
                                 )}
                             />
                         </div>
+                        <FormField
+                            control={form.control}
+                            name="dob"
+                            render={({ field }) => (
+                                <FormItem className="flex flex-col">
+                                    <FormLabel>
+                                        Tanggal perjalanan dinas
+                                    </FormLabel>
+                                    <Popover>
+                                        <PopoverTrigger asChild>
+                                            <FormControl>
+                                                <Button
+                                                    variant={'outline'}
+                                                    className={cn(
+                                                        'w-[240px] pl-3 text-left font-normal',
+                                                        !field.value?.from &&
+                                                            !field.value?.to &&
+                                                            'text-muted-foreground',
+                                                    )}
+                                                >
+                                                    {field.value?.from &&
+                                                    field.value?.to ? (
+                                                        `${format(
+                                                            field.value.from,
+                                                            'PPP',
+                                                        )} - ${format(
+                                                            field.value.to,
+                                                            'PPP',
+                                                        )}`
+                                                    ) : (
+                                                        <span>Pick a date</span>
+                                                    )}
+                                                    <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                                </Button>
+                                            </FormControl>
+                                        </PopoverTrigger>
+                                        <PopoverContent
+                                            className="w-auto p-0"
+                                            align="start"
+                                        >
+                                            <Calendar
+                                                mode="range"
+                                                selected={field.value}
+                                                onSelect={field.onChange}
+                                                initialFocus
+                                            />
+                                        </PopoverContent>
+                                    </Popover>
+                                    <FormDescription>
+                                        Lamanya waktu perjalanan dinas
+                                    </FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
                         <hr />
+                        <div>Daftar Anggota</div>
                         <div className="space-y-4">
                             {data.map((val, key) => (
                                 <div
@@ -408,7 +460,7 @@ export default function Dashboard() {
                                         </FormDescription>
                                     </div>
                                     <div className="flex-1">
-                                        <FormLabel>Nama Pengaju</FormLabel>
+                                        <FormLabel>Nama</FormLabel>
                                         <FormControl>
                                             <Input
                                                 placeholder="John Doe"
