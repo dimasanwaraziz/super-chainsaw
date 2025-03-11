@@ -15,7 +15,15 @@ class DashboardController extends Controller
 
     public function pengajuan()
     {
-        return Inertia::render('Dashboard/Pengajuan/Pengajuan');
+        User::all();
+        return Inertia::render('Dashboard/Pengajuan/Pengajuan', [
+            'user' => User::all(),
+        ]);
+    }
+
+    public function pengajuanbaru()
+    {
+        return Inertia::render('Dashboard/Pengajuan/Baru');
     }
 
     public function downloadRincianPerjalananDinas()

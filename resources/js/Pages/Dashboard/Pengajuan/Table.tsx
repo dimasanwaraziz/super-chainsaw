@@ -12,6 +12,7 @@ import {
     getSortedRowModel,
     useReactTable,
 } from '@tanstack/react-table';
+import { Link } from '@inertiajs/react';
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from 'lucide-react';
 import * as React from 'react';
 
@@ -221,6 +222,9 @@ export default function DataTableDemo() {
                     }
                     className="max-w-sm"
                 />
+                <Button asChild>
+                    <Link href={route('pengajuanbaru')}>Buat pengajuan baru</Link>
+                </Button>
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="outline" className="ml-auto">
