@@ -44,6 +44,7 @@ const formSchema = z.object({
         from: z.date(),
         to: z.date(),
     }),
+    kodeMataAnggaran: z.string().min(1),
 });
 
 export default function Dashboard() {
@@ -426,6 +427,32 @@ export default function Dashboard() {
                                     </Popover>
                                     <FormDescription>
                                         Lamanya waktu perjalanan dinas
+                                    </FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="kodeMataAnggaran"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Kode Mata Anggaran</FormLabel>
+                                    <FormControl>
+                                        <Select>
+                                            <SelectTrigger className="w-[180px]">
+                                                <SelectValue placeholder="Pilih Kode" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                <SelectItem value="001">001 - Kode Anggaran 1</SelectItem>
+                                                <SelectItem value="002">002 - Kode Anggaran 2</SelectItem>
+                                                <SelectItem value="003">003 - Kode Anggaran 3</SelectItem>
+                                                <SelectItem value="004">004 - Kode Anggaran 4</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                    </FormControl>
+                                    <FormDescription>
+                                        Pilih kode mata anggaran yang sesuai.
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>

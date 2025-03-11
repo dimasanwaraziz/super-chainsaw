@@ -82,7 +82,7 @@
     </table>
 
     <br>
-    Atas persetujuan Pimpinan Sekretariat Jenderal DPR RI, maka dengan Indonesia
+    Atas persetujuan Pimpinan Sekretariat Jenderal DPR RI, maka dengan ini
 
     <div style="text-align: center;">
         <br>
@@ -105,7 +105,7 @@
     </table>
 
     <br>
-    Demikian Surat Tugas ini agar dilaksanakan dengan sebaik-baiknya dan penuh tanggungjawab.
+    Demikian Surat Tugas ini agar dilaksanakan dengan sebaik-baiknya dan penuh tanggung jawab.
 
     <br><br>
     <table style="width: 100%;">
