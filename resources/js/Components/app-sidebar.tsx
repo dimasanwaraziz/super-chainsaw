@@ -1,5 +1,5 @@
 import { usePage } from '@inertiajs/react';
-import { Calendar, CircleDollarSign, ContactRound, FileDigit, Home, Inbox, ListCollapse, Search } from 'lucide-react';
+import { Calendar, CircleDollarSign, ContactRound, FileDigit, Home, Inbox, LetterText, ListCollapse, Search } from 'lucide-react';
 import * as React from 'react';
 import ApplicationLogo from './ApplicationLogo';
 
@@ -84,6 +84,11 @@ const items = [
         title: 'Daftar Nominal',
         url: route('downloaddaftarnominal'),
         icon: FileDigit,
+    },
+    {
+        title: 'Surat Tugas',
+        url: route('downloadsurattugas'),
+        icon: LetterText,
     },
 ];
 

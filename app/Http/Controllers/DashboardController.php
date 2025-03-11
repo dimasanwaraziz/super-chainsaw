@@ -64,4 +64,14 @@ class DashboardController extends Controller
         $pdf->setPaper('a4', 'landscape');
         return $pdf->stream('users.pdf');
     }
+
+    public function downloadSuratTugas()
+    {
+        $users = User::all();
+        $pdf = app('dompdf.wrapper');
+        $pdf->getDomPDF()->set_option("enable_php", true);
+        $pdf->loadView('surattugas', compact('users'));
+        $pdf->setPaper('a4');
+        return $pdf->stream('users.pdf');
+    }
 }

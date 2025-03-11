@@ -15,6 +15,7 @@ Route::get('/loket/download/rincian-perjalanan-dinas', [DashboardController::cla
 Route::get('/loket/download/pertanggungjawaban', [DashboardController::class, 'downloadPertanggungjawaban'])->middleware(['auth', 'verified'])->name('downloadpertanggungjawabanperjalanandinas');
 Route::get('/loket/download/tandaterimaperjalanandinas', [DashboardController::class, 'downloadTandaTerimaPerjalananDinas'])->middleware(['auth', 'verified'])->name('downloadtandaterimaperjalanandinas');
 Route::get('/loket/download/daftarnominal', [DashboardController::class, 'downloadDaftarNominal'])->middleware(['auth', 'verified'])->name('downloaddaftarnominal');
+Route::get('/loket/download/surattugas', [DashboardController::class, 'downloadSuratTugas'])->middleware(['auth', 'verified'])->name('downloadsurattugas');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
