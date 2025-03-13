@@ -31,44 +31,6 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 
-// This is sample data.
-const data = {
-    navMain: [
-        {
-            title: 'Dashboard',
-            url: route('dashboard'),
-            link: '/dashboard',
-        },
-        {
-            title: 'Layanan Loket',
-            url: '#',
-            items: [
-                {
-                    title: 'Pengajuan',
-                    url: route('pengajuan'),
-                    link: '/loket/pengajuan',
-                },
-                {
-                    title: 'Rincian Biaya Perjadin',
-                    url: route('downloadrincianbiayaperjalanandinas'),
-                },
-                {
-                    title: 'Pertanggungjawaban',
-                    url: route('downloadpertanggungjawabanperjalanandinas'),
-                },
-                {
-                    title: 'Tanda Terima Uang',
-                    url: route('downloadtandaterimaperjalanandinas'),
-                },
-                {
-                    title: 'Daftar Nominal',
-                    url: route('downloaddaftarnominal'),
-                },
-            ],
-        },
-    ],
-};
-
 const items = [
     {
         title: 'Home',
@@ -83,6 +45,13 @@ const items = [
         link: '/loket/pengajuan',
         icon: Inbox,
         role: ['*'],
+    },
+    {
+        title: 'Approval',
+        url: route('approval'),
+        link: '/approval',
+        icon: Inbox,
+        role: ['karo', 'kabag', 'kasubag'],
     },
     {
         title: 'Rincian Biaya Perjadin',
@@ -139,7 +108,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {items.map((item) => {
-                                const hasRole = item.role.includes('*') || item.role.some(role => roles.includes(role));
+                                const hasRole =
+                                    item.role.includes('*') ||
+                                    item.role.some((role) =>
+                                        roles.includes(role),
+                                    );
                                 if (!hasRole) return null;
                                 return (
                                     <SidebarMenuItem key={item.title}>
