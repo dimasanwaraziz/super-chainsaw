@@ -138,8 +138,6 @@ export default function DataTableDemo({ data }: { data: Pengajuan[] }) {
         },
     });
 
-    console.log(data);
-
     return (
         <div className="w-full">
             <div className="flex items-center py-4">

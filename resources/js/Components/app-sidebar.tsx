@@ -119,7 +119,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                                         <SidebarMenuButton
                                             asChild
                                             isActive={
-                                                url === item.link ? true : false
+                                                item.link &&
+                                                url.startsWith(item.link)
+                                                    ? true
+                                                    : false
                                             }
                                         >
                                             <a href={item.url}>

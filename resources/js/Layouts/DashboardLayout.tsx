@@ -21,6 +21,8 @@ export default function PageDashboard({
     children,
 }: PropsWithChildren<{ header?: ReactNode }>) {
     const { url } = usePage();
+    const { breadcrumbs } = usePage().props;
+    console.log(breadcrumbs);
 
     return (
         <SidebarProvider>
