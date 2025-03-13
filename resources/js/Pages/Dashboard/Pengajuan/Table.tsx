@@ -223,7 +223,7 @@ export default function DataTableDemo() {
                     className="max-w-sm"
                 />
                 <Button asChild>
-                    <Link href={route('pengajuanbaru')}>Buat pengajuan baru</Link>
+                    <Link href={route('pengajuan.baru')}>Buat pengajuan baru</Link>
                 </Button>
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>

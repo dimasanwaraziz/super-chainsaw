@@ -20,7 +20,7 @@ Breadcrumbs::for('pengajuan', function (BreadcrumbTrail $trail) {
 // home -> pengajuan -> pengajuan baru
 Breadcrumbs::for('pengajuan.baru', function (BreadcrumbTrail $trail) {
     $trail->parent('pengajuan'); // Harus merujuk ke 'pengajuan'
-    $trail->push('Buat Baru', route('pengajuanbaru'));
+    $trail->push('Buat Baru', route('pengajuan.baru'));
 });
 
 // Approval

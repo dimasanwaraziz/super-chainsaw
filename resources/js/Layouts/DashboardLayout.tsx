@@ -14,7 +14,7 @@ import {
     SidebarTrigger,
 } from '@/components/ui/sidebar';
 import { Breadcrumb as BreadcrumbType } from '@/types/Breadcrumb';
-import { usePage } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 import { PropsWithChildren, ReactNode } from 'react';
 
 export default function PageDashboard({
@@ -49,10 +49,10 @@ export default function PageDashboard({
                                             }
                                         >
                                             {breadcrumb.url ? (
-                                                <BreadcrumbLink
-                                                    href={breadcrumb.url}
-                                                >
-                                                    {breadcrumb.title}
+                                                <BreadcrumbLink asChild>
+                                                    <Link href={breadcrumb.url}>
+                                                        {breadcrumb.title}
+                                                    </Link>
                                                 </BreadcrumbLink>
                                             ) : (
                                                 <BreadcrumbPage>
