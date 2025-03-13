@@ -13,6 +13,7 @@ import {
     SidebarProvider,
     SidebarTrigger,
 } from '@/components/ui/sidebar';
+import { Breadcrumb as BreadcrumbType } from '@/types/Breadcrumb';
 import { usePage } from '@inertiajs/react';
 import { PropsWithChildren, ReactNode } from 'react';
 
@@ -20,9 +21,9 @@ export default function PageDashboard({
     header,
     children,
 }: PropsWithChildren<{ header?: ReactNode }>) {
-    const { url } = usePage();
-    const { breadcrumbs } = usePage().props;
-    console.log(breadcrumbs);
+    const { breadcrumbs = [] } = usePage().props as {
+        breadcrumbs?: BreadcrumbType[];
+    };
 
     return (
         <SidebarProvider>
@@ -37,17 +38,37 @@ export default function PageDashboard({
                         />
                         <Breadcrumb>
                             <BreadcrumbList>
-                                <BreadcrumbItem className="hidden md:block">
-                                    <BreadcrumbLink href="#">
-                                        Building Your Application
-                                    </BreadcrumbLink>
-                                </BreadcrumbItem>
-                                <BreadcrumbSeparator className="hidden md:block" />
-                                <BreadcrumbItem>
-                                    <BreadcrumbPage>
-                                        Data Fetching
-                                    </BreadcrumbPage>
-                                </BreadcrumbItem>
+                                {breadcrumbs.length > 0 ? (
+                                    breadcrumbs.map((breadcrumb, index) => (
+                                        <BreadcrumbItem
+                                            key={index}
+                                            className={
+                                                index === breadcrumbs.length - 1
+                                                    ? 'font-bold'
+                                                    : ''
+                                            }
+                                        >
+                                            {breadcrumb.url ? (
+                                                <BreadcrumbLink
+                                                    href={breadcrumb.url}
+                                                >
+                                                    {breadcrumb.title}
+                                                </BreadcrumbLink>
+                                            ) : (
+                                                <BreadcrumbPage>
+                                                    {breadcrumb.title}
+                                                </BreadcrumbPage>
+                                            )}
+                                            {index < breadcrumbs.length - 1 && (
+                                                <BreadcrumbSeparator />
+                                            )}
+                                        </BreadcrumbItem>
+                                    ))
+                                ) : (
+                                    <BreadcrumbItem>
+                                        <BreadcrumbPage>Home</BreadcrumbPage>
+                                    </BreadcrumbItem>
+                                )}
                             </BreadcrumbList>
                         </Breadcrumb>
                     </div>

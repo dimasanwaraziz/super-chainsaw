@@ -42,7 +42,7 @@ const items = [
     {
         title: 'Pengajuan',
         url: route('pengajuan'),
-        link: '/loket/pengajuan',
+        link: '/pengajuan',
         icon: Inbox,
         role: ['*'],
     },
@@ -125,10 +125,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                                                     : false
                                             }
                                         >
-                                            <a href={item.url}>
+                                            <Link href={item.url}>
                                                 <item.icon />
                                                 <span>{item.title}</span>
-                                            </a>
+                                            </Link>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>
                                 );
