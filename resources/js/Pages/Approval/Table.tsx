@@ -1,5 +1,6 @@
 'use client';
 
+import { Link } from '@inertiajs/react';
 import {
     ColumnDef,
     ColumnFiltersState,
@@ -12,8 +13,7 @@ import {
     getSortedRowModel,
     useReactTable,
 } from '@tanstack/react-table';
-import { Link } from '@inertiajs/react';
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from 'lucide-react';
+import { ChevronDown, MoreHorizontal } from 'lucide-react';
 import * as React from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -22,9 +22,6 @@ import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
@@ -37,34 +34,7 @@ import {
     TableRow,
 } from '@/components/ui/table';
 
-const data: Payment[] = [
-    {
-        "id": "1",
-        "Nomor Surat": "123/ABC/2023",
-        "Unit Kerja": "Finance",
-        "Tujuan Berangkat": "Jakarta",
-        "Jumlah Anggota": 3,
-        "Tanggal Berangkat": "2023-10-01"
-    },
-    {
-        "id": "2",
-        "Nomor Surat": "124/DEF/2023",
-        "Unit Kerja": "HR",
-        "Tujuan Berangkat": "Bandung",
-        "Jumlah Anggota": 2,
-        "Tanggal Berangkat": "2023-10-05"
-    },
-    {
-        "id": "3",
-        "Nomor Surat": "125/GHI/2023",
-        "Unit Kerja": "IT",
-        "Tujuan Berangkat": "Surabaya",
-        "Jumlah Anggota": 4,
-        "Tanggal Berangkat": "2023-10-10"
-    }
-];
-
-export type Payment = {
+export type Pengajuan = {
     id: string;
     'Nomor Surat': string;
     'Unit Kerja': string;
@@ -73,7 +43,7 @@ export type Payment = {
     'Tanggal Berangkat': string;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Pengajuan>[] = [
     {
         id: 'select',
         header: ({ table }) => (
@@ -99,39 +69,29 @@ export const columns: ColumnDef<Payment>[] = [
         enableHiding: false,
     },
     {
-        accessorKey: 'Nomor Surat',
+        accessorKey: 'nomor_surat',
         header: 'Nomor Surat',
-        cell: ({ row }) => (
-            <div>{row.getValue('Nomor Surat')}</div>
-        ),
+        cell: ({ row }) => <div>{row.getValue('nomor_surat')}</div>,
     },
     {
-        accessorKey: 'Unit Kerja',
+        accessorKey: 'unit_kerja',
         header: 'Unit Kerja',
-        cell: ({ row }) => (
-            <div>{row.getValue('Unit Kerja')}</div>
-        ),
+        cell: ({ row }) => <div>{row.getValue('unit_kerja')}</div>,
     },
     {
-        accessorKey: 'Tujuan Berangkat',
+        accessorKey: 'tujuan',
         header: 'Tujuan Berangkat',
-        cell: ({ row }) => (
-            <div>{row.getValue('Tujuan Berangkat')}</div>
-        ),
+        cell: ({ row }) => <div>{row.getValue('tujuan')}</div>,
     },
     {
-        accessorKey: 'Jumlah Anggota',
+        accessorKey: 'anggota_pengajuan_count',
         header: 'Jumlah Anggota',
-        cell: ({ row }) => (
-            <div>{row.getValue('Jumlah Anggota')}</div>
-        ),
+        cell: ({ row }) => <div>{row.getValue('anggota_pengajuan_count')}</div>,
     },
     {
-        accessorKey: 'Tanggal Berangkat',
+        accessorKey: 'tanggal_berangkat',
         header: 'Tanggal Berangkat',
-        cell: ({ row }) => (
-            <div>{row.getValue('Tanggal Berangkat')}</div>
-        ),
+        cell: ({ row }) => <div>{row.getValue('tanggal_berangkat')}</div>,
     },
     {
         id: 'actions',
@@ -151,7 +111,7 @@ export const columns: ColumnDef<Payment>[] = [
     },
 ];
 
-export default function DataTableDemo() {
+export default function DataTableDemo({ data }: { data: Pengajuan[] }) {
     const [sorting, setSorting] = React.useState<SortingState>([]);
     const [columnFilters, setColumnFilters] =
         React.useState<ColumnFiltersState>([]);
@@ -178,6 +138,8 @@ export default function DataTableDemo() {
         },
     });
 
+    console.log(data);
+
     return (
         <div className="w-full">
             <div className="flex items-center py-4">
@@ -185,12 +147,12 @@ export default function DataTableDemo() {
                     placeholder="Cari data..."
                     value={
                         (table
-                            .getColumn('Nomor Surat')
+                            .getColumn('nomor_surat')
                             ?.getFilterValue() as string) ?? ''
                     }
                     onChange={(event) =>
                         table
-                            .getColumn('Nomor Surat')
+                            .getColumn('nomor_surat')
                             ?.setFilterValue(event.target.value)
                     }
                     className="max-w-sm"

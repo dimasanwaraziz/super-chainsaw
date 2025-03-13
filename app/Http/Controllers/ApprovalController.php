@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pengajuan;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -12,7 +13,22 @@ class ApprovalController extends Controller
      */
     public function index()
     {
-        return Inertia::render("Approval/Index");
+        $pengajuan = Pengajuan::withCount('anggotaPengajuan')->get();
+
+        $totalPending = Pengajuan::where('status_pengajuan', 'pending')->count();
+        $totalDisetujui = Pengajuan::where('status_pengajuan', 'disetujui')->count();
+        $totalDitolak = Pengajuan::where('status_pengajuan', 'ditolak')->count();
+        $totalKeseluruhan = Pengajuan::count();
+
+        return Inertia::render("Approval/Index", [
+            'pengajuan' => $pengajuan,
+            'totals' => [
+                'pending' => $totalPending,
+                'disetujui' => $totalDisetujui,
+                'ditolak' => $totalDitolak,
+                'keseluruhan' => $totalKeseluruhan,
+            ]
+        ]);
     }
 
     /**

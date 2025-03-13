@@ -1,9 +1,18 @@
-export default function Testing() {
+interface Totals {
+    pending: number;
+    disetujui: number;
+    ditolak: number;
+    keseluruhan: number;
+}
+
+export default function Testing({ totals }: { totals: Totals }) {
     return (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-xl border bg-card text-card-foreground shadow">
                 <div className="flex flex-row items-center justify-between space-y-0 p-6 pb-2">
-                    <div className="text-sm font-medium tracking-tight">Pengajuan Baru</div>
+                    <div className="text-sm font-medium tracking-tight">
+                        Pengajuan Baru
+                    </div>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -18,13 +27,17 @@ export default function Testing() {
                     </svg>
                 </div>
                 <div className="p-6 pt-0">
-                    <div className="text-2xl font-bold">0</div>
-                    <p className="text-xs text-muted-foreground">Total surat masuk baru butuh approval</p>
+                    <div className="text-2xl font-bold">{totals.pending}</div>
+                    <p className="text-xs text-muted-foreground">
+                        Total surat masuk baru butuh approval
+                    </p>
                 </div>
             </div>
             <div className="rounded-xl border bg-card text-card-foreground shadow">
                 <div className="flex flex-row items-center justify-between space-y-0 p-6 pb-2">
-                    <div className="text-sm font-medium tracking-tight">Disetujui</div>
+                    <div className="text-sm font-medium tracking-tight">
+                        Disetujui
+                    </div>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -41,13 +54,19 @@ export default function Testing() {
                     </svg>
                 </div>
                 <div className="p-6 pt-0">
-                    <div className="text-2xl font-bold text-green-500">15</div>
-                    <p className="text-xs text-muted-foreground">Total surat disetujui</p>
+                    <div className="text-2xl font-bold text-green-500">
+                        {totals.disetujui}
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                        Total surat disetujui
+                    </p>
                 </div>
             </div>
             <div className="rounded-xl border bg-card text-card-foreground shadow">
                 <div className="flex flex-row items-center justify-between space-y-0 p-6 pb-2">
-                    <div className="text-sm font-medium tracking-tight">Ditolak</div>
+                    <div className="text-sm font-medium tracking-tight">
+                        Ditolak
+                    </div>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -63,13 +82,19 @@ export default function Testing() {
                     </svg>
                 </div>
                 <div className="p-6 pt-0">
-                    <div className="text-2xl font-bold text-red-500">5</div>
-                    <p className="text-xs text-muted-foreground">Total surat pengajuan ditolak</p>
+                    <div className="text-2xl font-bold text-red-500">
+                        {totals.ditolak}
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                        Total surat pengajuan ditolak
+                    </p>
                 </div>
             </div>
             <div className="rounded-xl border bg-card text-card-foreground shadow">
                 <div className="flex flex-row items-center justify-between space-y-0 p-6 pb-2">
-                    <div className="text-sm font-medium tracking-tight">Total</div>
+                    <div className="text-sm font-medium tracking-tight">
+                        Total
+                    </div>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -84,8 +109,12 @@ export default function Testing() {
                     </svg>
                 </div>
                 <div className="p-6 pt-0">
-                    <div className="text-2xl font-bold">20</div>
-                    <p className="text-xs text-muted-foreground">Total surat masuk</p>
+                    <div className="text-2xl font-bold">
+                        {totals.keseluruhan}
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                        Total surat masuk
+                    </p>
                 </div>
             </div>
         </div>

@@ -18,6 +18,7 @@ class Pengajuan extends Model
         'tujuan',
         'tanggal_berangkat',
         'tanggal_pulang',
+        'status_pengajuan',
     ];
 
     public function anggotaPengajuan()
