@@ -17,6 +17,7 @@ Route::get('/download/daftarnominal', [DashboardController::class, 'downloadDaft
 Route::get('/download/surattugas', [DashboardController::class, 'downloadSuratTugas'])->middleware(['auth', 'verified'])->name('downloadsurattugas');
 
 Route::get('/approval', [ApprovalController::class, 'index'])->middleware(['auth', 'verified', 'role:karo'])->name('approval');
+Route::get('/approval/{id}', [ApprovalController::class, 'show'])->middleware(['auth', 'verified', 'role:karo'])->name('approval.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
