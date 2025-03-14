@@ -40,29 +40,39 @@ export default function PageDashboard({
                             <BreadcrumbList>
                                 {breadcrumbs.length > 0 ? (
                                     breadcrumbs.map((breadcrumb, index) => (
-                                        <BreadcrumbItem
-                                            key={index}
-                                            className={
-                                                index === breadcrumbs.length - 1
-                                                    ? 'font-bold'
-                                                    : ''
-                                            }
+                                        <div
+                                            className="flex items-center gap-[10px]"
+                                            key={index + 'bread'}
                                         >
-                                            {breadcrumb.url ? (
-                                                <BreadcrumbLink asChild>
-                                                    <Link href={breadcrumb.url}>
+                                            <BreadcrumbItem
+                                                key={index}
+                                                className={
+                                                    index ===
+                                                    breadcrumbs.length - 1
+                                                        ? 'font-bold'
+                                                        : ''
+                                                }
+                                            >
+                                                {breadcrumb.url ? (
+                                                    <BreadcrumbLink asChild>
+                                                        <Link
+                                                            href={
+                                                                breadcrumb.url
+                                                            }
+                                                        >
+                                                            {breadcrumb.title}
+                                                        </Link>
+                                                    </BreadcrumbLink>
+                                                ) : (
+                                                    <BreadcrumbPage>
                                                         {breadcrumb.title}
-                                                    </Link>
-                                                </BreadcrumbLink>
-                                            ) : (
-                                                <BreadcrumbPage>
-                                                    {breadcrumb.title}
-                                                </BreadcrumbPage>
-                                            )}
+                                                    </BreadcrumbPage>
+                                                )}
+                                            </BreadcrumbItem>
                                             {index < breadcrumbs.length - 1 && (
                                                 <BreadcrumbSeparator />
                                             )}
-                                        </BreadcrumbItem>
+                                        </div>
                                     ))
                                 ) : (
                                     <BreadcrumbItem>
