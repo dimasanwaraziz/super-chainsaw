@@ -1,5 +1,6 @@
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
 import {
     Table,
     TableBody,
@@ -84,6 +85,9 @@ export default function Detail({ detail }: { detail: DetailType }) {
                     ))}
                 </TableBody>
             </Table>
+            <Button className="mt-4">Approve</Button>
+            <Button className="mt-4">Reject</Button>
+            <div className='pb-[1000px]'></div>
         </div>
     );
 }
