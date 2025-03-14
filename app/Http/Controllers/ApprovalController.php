@@ -52,7 +52,7 @@ class ApprovalController extends Controller
      */
     public function show(string $id)
     {
-        $pengajuan = Pengajuan::findOrFail($id);
+        $pengajuan = Pengajuan::with('anggotaPengajuan')->findOrFail($id);
 
         return Inertia::render('Approval/Show/Index', [
             'pengajuan' => $pengajuan,
