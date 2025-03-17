@@ -53,12 +53,12 @@ const items = [
         icon: Inbox,
         role: ['karo', 'kabag', 'kasubag'],
     },
-    {
-        title: 'Rincian Biaya Perjadin',
-        url: route('downloadrincianbiayaperjalanandinas'),
-        icon: ListCollapse,
-        role: ['*'],
-    },
+    // {
+    //     title: 'Rincian Biaya Perjadin',
+    //     url: route('downloadrincianbiayaperjalanandinas'),
+    //     icon: ListCollapse,
+    //     role: ['*'],
+    // },
     {
         title: 'Pertanggungjawaban',
         url: route('downloadpertanggungjawabanperjalanandinas'),
