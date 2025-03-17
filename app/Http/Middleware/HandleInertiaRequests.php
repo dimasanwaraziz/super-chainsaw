@@ -36,6 +36,7 @@ class HandleInertiaRequests extends Middleware
                 'roles' => $request->user() ? $request->user()->getRoleNames() : [],
                 'permissions' => $request->user() ? $request->user()->getPermissionNames() : []
             ],
+            'csrf' => csrf_token(),
         ];
     }
 }

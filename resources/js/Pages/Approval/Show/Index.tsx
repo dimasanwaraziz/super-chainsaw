@@ -4,7 +4,6 @@ import Detail from './Detail';
 
 export default function Dashboard() {
     const detail = usePage().props.pengajuan as any;
-    console.log(detail);
     return (
         <DashboardLayout>
             <Head title="Approval Detail" />

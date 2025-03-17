@@ -20,7 +20,7 @@ import {
     TableRow,
 } from '@/components/ui/table';
 import { Textarea } from '@/components/ui/textarea';
-import { router } from '@inertiajs/react';
+import { usePage } from '@inertiajs/react';
 
 type DetailType = {
     anggota_pengajuan: { nama_anggota: string; nip: string }[];
@@ -37,38 +37,6 @@ type DetailType = {
 };
 
 export default function Detail({ detail }: { detail: DetailType }) {
-    // const generatePDF = (id: number) => {
-    //     router.post(
-    //         route('downloadrincianbiayaperjalanandinas'),
-    //         { id },
-    //         {
-    //             onSuccess: () => {
-    //                 window.open(`/generate-pdf/${id}`, '_blank'); // Buka PDF di tab baru
-    //             },
-    //         },
-    //     );
-    // };
-    const generatePDF = async (id: number) => {
-        const response = await fetch('/generate-pdf', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN':
-                    document
-                        .querySelector('meta[name="csrf-token"]')
-                        ?.getAttribute('content') || '',
-            },
-            body: JSON.stringify({ id }),
-        });
-
-        if (response.ok) {
-            const blob = await response.blob();
-            const url = URL.createObjectURL(blob);
-            window.open(url, '_blank'); // Buka PDF di tab baru
-        } else {
-            console.error('Gagal mengambil PDF');
-        }
-    };
     return (
         <div className="px-4">
             <div className="mb-4">
@@ -128,26 +96,22 @@ export default function Detail({ detail }: { detail: DetailType }) {
                     ))}
                 </TableBody>
             </Table>
-            {/* <Button asChild> */}
-            {/* <a
-                    href={route('downloadrincianbiayaperjalanandinas')}
-                    target="_blank"
-                >
-                    Lihat Rincian Dokumen
-                </a> */}
-            {/* <Link
-                    href={route('downloadrincianbiayaperjalanandinas')}
-                    method="post"
-                    data={{ id: detail.id }}
-                    target="_blank"
-                    as="button"
-                >
-                    Lihat Rincian Dokumen Perjalanan Dinas
-                </Link> */}
-            {/* </Button> */}
-            <Button onClick={() => generatePDF(detail.id)}>
-                Lihat Rincian Dokumen
-            </Button>
+            <form
+                action={route('downloadrincianbiayaperjalanandinas')}
+                method="POST"
+                target="_blank"
+            >
+                <input
+                    type="hidden"
+                    name="_token"
+                    value={usePage().props.csrf as string}
+                />
+                <input type="hidden" name="id" value={detail.id} />
+                <button
+                    type="submit"
+                    className="rounded-md bg-blue-500 px-4 py-2 text-white"
+                >Lihat Dokumen Rincian Perjalanan</button>
+            </form>
             <div className="my-4">
                 <Dialog>
                     <DialogTrigger asChild>
