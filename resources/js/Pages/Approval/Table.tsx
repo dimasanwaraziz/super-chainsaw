@@ -12,7 +12,7 @@ import {
     getSortedRowModel,
     useReactTable,
 } from '@tanstack/react-table';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, MoreHorizontal } from 'lucide-react';
 import * as React from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -20,6 +20,9 @@ import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
@@ -91,6 +94,37 @@ export const columns: ColumnDef<Pengajuan>[] = [
         accessorKey: 'tanggal_berangkat',
         header: 'Tanggal Berangkat',
         cell: ({ row }) => <div>{row.getValue('tanggal_berangkat')}</div>,
+    },
+    {
+        id: 'actions',
+        enableHiding: false,
+        cell: ({ row }) => {
+            const payment = row.original;
+
+            return (
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" className="h-8 w-8 p-0">
+                            <span className="sr-only">Open menu</span>
+                            <MoreHorizontal />
+                        </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                        <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                        <DropdownMenuItem
+                            onClick={() =>
+                                navigator.clipboard.writeText(payment.id)
+                            }
+                        >
+                            Lihat detail
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>Setujui</DropdownMenuItem>
+                        <DropdownMenuItem>Tolak</DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+            );
+        },
     },
     // {
     //     id: 'actions',
@@ -207,8 +241,14 @@ export default function DataTableDemo({ data }: { data: Pengajuan[] }) {
                             table.getRowModel().rows.map((row) => (
                                 <TableRow
                                     key={row.id}
-                                    data-state={row.getIsSelected() && 'selected'}
-                                    onClick={() => router.visit(`/approval/${row.original.id}`)}
+                                    data-state={
+                                        row.getIsSelected() && 'selected'
+                                    }
+                                    onClick={() =>
+                                        router.visit(
+                                            `/approval/${row.original.id}`,
+                                        )
+                                    }
                                     className="cursor-pointer"
                                 >
                                     {row.getVisibleCells().map((cell) => (

@@ -10,7 +10,7 @@ Route::redirect('/', '/dashboard');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/pengajuan', [DashboardController::class, 'pengajuan'])->middleware(['auth', 'verified'])->name('pengajuan');
 Route::get('/pengajuan/baru', [DashboardController::class, 'pengajuanbaru'])->middleware(['auth', 'verified'])->name('pengajuan.baru');
-Route::get('/download/rincian-perjalanan-dinas', [DashboardController::class, 'downloadRincianPerjalananDinas'])->middleware(['auth', 'verified'])->name('downloadrincianbiayaperjalanandinas');
+Route::post('/download/rincian-perjalanan-dinas', [DashboardController::class, 'downloadRincianPerjalananDinas'])->middleware(['auth', 'verified'])->name('downloadrincianbiayaperjalanandinas');
 Route::get('/download/pertanggungjawaban', [DashboardController::class, 'downloadPertanggungjawaban'])->middleware(['auth', 'verified'])->name('downloadpertanggungjawabanperjalanandinas');
 Route::get('/download/tandaterimaperjalanandinas', [DashboardController::class, 'downloadTandaTerimaPerjalananDinas'])->middleware(['auth', 'verified'])->name('downloadtandaterimaperjalanandinas');
 Route::get('/download/daftarnominal', [DashboardController::class, 'downloadDaftarNominal'])->middleware(['auth', 'verified'])->name('downloaddaftarnominal');

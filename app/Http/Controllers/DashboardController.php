@@ -27,8 +27,9 @@ class DashboardController extends Controller
         return Inertia::render('Dashboard/Pengajuan/Baru');
     }
 
-    public function downloadRincianPerjalananDinas()
+    public function downloadRincianPerjalananDinas(Request $request)
     {
+        $pengajuanId = $request->post('id');
         $users = User::all();
         $pdf = app('dompdf.wrapper');
         $pdf->getDomPDF()->set_option("enable_php", true);
