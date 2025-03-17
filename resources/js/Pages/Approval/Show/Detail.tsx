@@ -1,6 +1,15 @@
+import { Button } from '@/components/ui/button';
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
 import {
     Table,
     TableBody,
@@ -10,6 +19,7 @@ import {
     TableHeader,
     TableRow,
 } from '@/components/ui/table';
+import { Textarea } from '@/components/ui/textarea';
 
 type DetailType = {
     anggota_pengajuan: { nama_anggota: string; nip: string }[];
@@ -85,9 +95,52 @@ export default function Detail({ detail }: { detail: DetailType }) {
                     ))}
                 </TableBody>
             </Table>
-            <Button className="mt-4">Approve</Button>
-            <Button className="mt-4">Reject</Button>
-            <div className='pb-[1000px]'></div>
+            <div className="my-4">
+                <Dialog>
+                    <DialogTrigger asChild>
+                        <Button className="bg-green-500 hover:bg-green-500/90">
+                            Setujui
+                        </Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                            <DialogTitle>
+                                <span className="text-green-500">Setujui </span>
+                                pengajuan?
+                            </DialogTitle>
+                            <DialogDescription>
+                                Masukkan pesan:
+                            </DialogDescription>
+                        </DialogHeader>
+                        <Textarea placeholder="input pesan" />
+                        <DialogFooter>
+                            <Button type="submit">Kirim</Button>
+                        </DialogFooter>
+                    </DialogContent>
+                </Dialog>
+                <Dialog>
+                    <DialogTrigger asChild>
+                        <Button variant="destructive" className="ml-4">
+                            Tolak
+                        </Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                            <DialogTitle>
+                                <span className="text-red-500">Tolak </span>
+                                pengajuan?
+                            </DialogTitle>
+                            <DialogDescription>
+                                Masukan pesan:
+                            </DialogDescription>
+                        </DialogHeader>
+                        <Textarea placeholder="input pesan" />
+                        <DialogFooter>
+                            <Button type="submit">Kirim</Button>
+                        </DialogFooter>
+                    </DialogContent>
+                </Dialog>
+            </div>
         </div>
     );
 }
