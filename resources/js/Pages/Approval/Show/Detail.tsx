@@ -96,22 +96,103 @@ export default function Detail({ detail }: { detail: DetailType }) {
                     ))}
                 </TableBody>
             </Table>
-            <form
-                action={route('downloadrincianbiayaperjalanandinas')}
-                method="POST"
-                target="_blank"
-            >
-                <input
-                    type="hidden"
-                    name="_token"
-                    value={usePage().props.csrf as string}
-                />
-                <input type="hidden" name="id" value={detail.id} />
-                <button
-                    type="submit"
-                    className="rounded-md bg-blue-500 px-4 py-2 text-white"
-                >Lihat Dokumen Rincian Perjalanan</button>
-            </form>
+            <br />
+            <div className='flex gap-2'>
+                <span>
+                    <form
+                        action={route('downloadrincianbiayaperjalanandinas')}
+                        method="POST"
+                        target="_blank"
+                    >
+                        <input
+                            type="hidden"
+                            name="_token"
+                            value={usePage().props.csrf as string}
+                        />
+                        <input type="hidden" name="id" value={detail.id} />
+                        <button
+                            type="submit"
+                            className="rounded-md bg-blue-500 px-4 py-2 text-white"
+                        >
+                            Download Dokumen Rincian Perjalanan
+                        </button>
+                    </form>
+                </span>
+                <span>
+                    <form
+                        action={route('downloadsurattugas')}
+                        method="POST"
+                        target="_blank"
+                    >
+                        <input
+                            type="hidden"
+                            name="_token"
+                            value={usePage().props.csrf as string}
+                        />
+                        <input type="hidden" name="id" value={detail.id} />
+                        <button
+                            type="submit"
+                            className="rounded-md bg-blue-500 px-4 py-2 text-white"
+                        >Download Surat Tugas</button>
+                    </form>
+                </span>
+                <span>
+                    <form
+                        action={route('downloaddaftarnominal')}
+                        method="POST"
+                        target="_blank"
+                    >
+                        <input
+                            type="hidden"
+                            name="_token"
+                            value={usePage().props.csrf as string}
+                        />
+                        <input type="hidden" name="id" value={detail.id} />
+                        <button
+                            type="submit"
+                            className="rounded-md bg-blue-500 px-4 py-2 text-white"
+                        >Download Daftar Nominal</button>
+                    </form>
+                </span>
+                <span>
+                    <form
+                        action={route('downloadtandaterimaperjalanandinas')}
+                        method="POST"
+                        target="_blank"
+                    >
+                        <input
+                            type="hidden"
+                            name="_token"
+                            value={usePage().props.csrf as string}
+                        />
+                        <input type="hidden" name="id" value={detail.id} />
+                        <button
+                            type="submit"
+                            className="rounded-md bg-blue-500 px-4 py-2 text-white"
+                        >Download Tanda Terima</button>
+                    </form>
+                </span>
+                <span>
+                    <form
+                        action={route('downloadrincianbiayaperjalanandinas')}
+                        method="POST"
+                        target="_blank"
+                    >
+                        <input
+                            type="hidden"
+                            name="_token"
+                            value={usePage().props.csrf as string}
+                        />
+                        <input type="hidden" name="id" value={detail.id} />
+                        <button
+                            type="submit"
+                            className="rounded-md bg-blue-500 px-4 py-2 text-white"
+                        >
+                            Download Dokumen Pendukung
+                        </button>
+                    </form>
+                </span>
+            </div>
             <div className="my-4">
                 <Dialog>
                     <DialogTrigger asChild>

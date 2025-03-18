@@ -47,11 +47,11 @@ const items = [
         role: ['*'],
     },
     {
-        title: 'Approval',
+        title: 'Approval Deputi',
         url: route('approval'),
         link: '/approval',
         icon: Inbox,
-        role: ['karo', 'kabag', 'kasubag'],
+        role: ['deputi', 'karo', 'kabag', 'kasubag'],
     },
     // {
     //     title: 'Rincian Biaya Perjadin',

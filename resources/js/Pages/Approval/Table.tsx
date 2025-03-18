@@ -12,7 +12,7 @@ import {
     getSortedRowModel,
     useReactTable,
 } from '@tanstack/react-table';
-import { ChevronDown, MoreHorizontal } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import * as React from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -20,9 +20,6 @@ import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
@@ -102,27 +99,35 @@ export const columns: ColumnDef<Pengajuan>[] = [
             const payment = row.original;
 
             return (
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" className="h-8 w-8 p-0">
-                            <span className="sr-only">Open menu</span>
-                            <MoreHorizontal />
-                        </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                        <DropdownMenuItem
-                            onClick={() =>
-                                navigator.clipboard.writeText(payment.id)
-                            }
-                        >
-                            Lihat detail
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>Setujui</DropdownMenuItem>
-                        <DropdownMenuItem>Tolak</DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                <div>
+                    <Button className="bg-green-500 hover:bg-green-500/90">
+                        Setujui
+                    </Button>
+                    <Button variant={'destructive'} className="ml-2">
+                        Tolak
+                    </Button>
+                </div>
+                // <DropdownMenu>
+                //     <DropdownMenuTrigger asChild>
+                //         <Button variant="ghost" className="h-8 w-8 p-0">
+                //             <span className="sr-only">Open menu</span>
+                //             <MoreHorizontal />
+                //         </Button>
+                //     </DropdownMenuTrigger>
+                //     <DropdownMenuContent align="end">
+                //         <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                //         <DropdownMenuItem
+                //             onClick={() =>
+                //                 navigator.clipboard.writeText(payment.id)
+                //             }
+                //         >
+                //             Lihat detail
+                //         </DropdownMenuItem>
+                //         <DropdownMenuSeparator />
+                //         <DropdownMenuItem>Setujui</DropdownMenuItem>
+                //         <DropdownMenuItem>Tolak</DropdownMenuItem>
+                //     </DropdownMenuContent>
+                // </DropdownMenu>
             );
         },
     },
