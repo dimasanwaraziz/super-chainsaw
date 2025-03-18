@@ -9,19 +9,19 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Dashboard/Index');
+        return Inertia::render(component: 'Dashboard/Index');
     }
 
     public function pengajuan()
     {
         User::all();
-        return Inertia::render('Dashboard/Pengajuan/Index', [
+        return Inertia::render(component: 'Dashboard/Pengajuan/Index', props: [
             'user' => User::all(),
         ]);
     }
 
     public function pengajuanbaru()
     {
-        return Inertia::render('Dashboard/Pengajuan/Baru/Index');
+        return Inertia::render(component: 'Dashboard/Pengajuan/Baru/Index');
     }
 }
